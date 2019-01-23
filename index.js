@@ -19,7 +19,7 @@ myCollection.insert({name: "doduck", description: "learn more than everyone"}, f
   console.log("entry saved");
 });
 
-//Updating a document by adding a field
+//Updating a document 
 //make sure this is run after insert is finished
 
 myCollection.update({name: "doduck"}, {name: "doduck", description: "prototype your idea"}, {w:1}, function(err){
@@ -27,6 +27,15 @@ myCollection.update({name: "doduck"}, {name: "doduck", description: "prototype y
     throw err;
   console.log("entry updated");
 });
+
+//Updating a document by adding a field
+//using $set operation (or else full document will be overwritten)
+
+myCollection.update({name: "doduck"}, {$set {industry: "France"}}, {w:1}, function(err){
+  if(err)
+    throw err;
+    console.log("entry updated");
+})
 
 //Updating a document by adding a field within a new field
 //MongoDB is model free and supports fields within fields
