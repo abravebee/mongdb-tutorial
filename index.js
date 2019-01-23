@@ -19,7 +19,7 @@ myCollection.insert({name: "doduck", description: "learn more than everyone"}, f
   console.log("entry saved");
 });
 
-//Updating a document
+//Updating a document by adding a field
 //make sure this is run after insert is finished
 
 myCollection.update({name: "doduck"}, {name: "doduck", description: "prototype your idea"}, {w:1}, function(err){
@@ -27,3 +27,4 @@ if(err)
   throw err;
   console.log("entry updated");
 });
+
