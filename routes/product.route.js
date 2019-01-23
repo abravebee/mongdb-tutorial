@@ -6,3 +6,5 @@ const product_controller = require('../controllers/product.controller');
 
 //Test URL for file communication
 router.get('/test', product_controller.test);
+
+module.exports = router;
