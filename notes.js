@@ -31,7 +31,7 @@ myCollection.update({name: "doduck"}, {name: "doduck", description: "prototype y
 //Updating a document by adding a field
 //using $set operation (or else full document will be overwritten)
 
-myCollection.update({name: "doduck"}, {$set {industry: "France"}}, {w:1}, function(err){
+myCollection.update({name: "doduck"}, {$set: {industry: "France"}}, {w:1}, function(err){
   if(err)
     throw err;
     console.log("entry updated");
