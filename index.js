@@ -36,3 +36,19 @@ myCollection.update({name: "doduck"}, {$set: {company: {employed: 10, officialNa
     throw err;
   console.log('entry updated');
 });
+
+//Finding a document
+//where name = doduck and company.officialName = doduck LTD
+//should return one entry
+
+var cursor = myCollection.find({"name" : "doduck", "company.officialName" : "doduck LTD"});
+cursor.each(function(err, doc) {
+  if(err)
+    throw err;
+  if(doc==null)
+    return;
+  
+    console.log("document find:");
+    console.log(doc.name);
+    console.log(doc.company.employed);
+})
