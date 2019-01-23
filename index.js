@@ -51,4 +51,12 @@ cursor.each(function(err, doc) {
     console.log("document find:");
     console.log(doc.name);
     console.log(doc.company.employed);
+});
+
+//Remove a document
+//containing "name" : "doduck"
+myCollection.findAndModify({name: "doduck"}, [], {remove:true}, function(err, object) {
+  if(err)
+    throw err;
+  console.log("document deleted");
 })
