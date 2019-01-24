@@ -1,3 +1,4 @@
+var ObjectId = require('mongodb').ObjectID;
 const Product = require('../models/product');
 
 //Simple version, without validation or sanitation
