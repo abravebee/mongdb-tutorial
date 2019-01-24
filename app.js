@@ -6,7 +6,6 @@ const product = require('./routes/product');
 
 //Initialize our express app
 const app = express();
-app.use('/products', product);
 
 //Connecting app to the remote database
 //Set up mongoose connection
@@ -21,6 +20,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //Body Parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+//Routes
+app.use('/products', product);
 
 //Port
 let port = 5500;
