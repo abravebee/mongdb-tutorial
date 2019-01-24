@@ -15,6 +15,8 @@ let dev_db_url = 'mongodb://someuser:abcd1234@ds211625.mlab.com:11625/productstu
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Port
 let port = 5500;
