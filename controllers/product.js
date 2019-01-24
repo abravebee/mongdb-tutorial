@@ -37,7 +37,7 @@ exports.product_update = function (req, res) {
 };
 
 exports.product_delete = function (req, res) {
-  Product.findByIdAndRemove(req.params.id, function (err) {
+  Product.findOneAndDelete(req.params.id, function (err) {
     if(err) return next(err);
     res.send('Deleted successfully!');
   })
