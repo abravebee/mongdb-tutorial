@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 //Import routes for products
-const product = require('./routes/product.route');
+const product = require('./routes/product');
 
 // initialize our express app
 const app = express();
